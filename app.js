@@ -22,9 +22,9 @@ function sortear(){
         }
         sorteados.push(numero);
     }
-        let resultado = document.getElementById('resultado');
-        resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-        alterarStatusBotao();
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+    alterarStatusBotao();
 }
 function obterNumeroAleatorio(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
