@@ -6,22 +6,25 @@ function sortear(){
     let sorteados = [];
     let numero;
 
+    if (ate < de){
+        alert('O Valor máximo é menor que o valor mínimo');
+        return
+    }
     // Condição que testa se é possível realizar o sorteio
     if (quantidade > (ate-(de-1))){
         alert('A Quantidade é maior que os resultados possíveis');
+        return;
     }
-    else{
-        for (i = 0; i < quantidade;i++){
+    for (i = 0; i < quantidade;i++){
+        numero = obterNumeroAleatorio(de,ate);
+        while(sorteados.includes(numero)){
             numero = obterNumeroAleatorio(de,ate);
-            while(sorteados.includes(numero)){
-                numero = obterNumeroAleatorio(de,ate);
-            }
-            sorteados.push(numero);
-            alterarStatusBotao();
         }
+        sorteados.push(numero);
+        alterarStatusBotao();
+    }
         let resultado = document.getElementById('resultado');
         resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-    }
 }
 function obterNumeroAleatorio(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
