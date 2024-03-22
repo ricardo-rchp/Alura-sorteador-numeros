@@ -17,27 +17,10 @@ function sortear(){
                 numero = obterNumeroAleatorio(de,ate);
             }
             sorteados.push(numero);
-            // if (sorteados.includes(numero)){
-            //     // Não faça nada
-            // }
-            // else{
-            //     sorteados.push(numero);
-            //     i++;
-            // }
             alterarStatusBotao();
         }
-
         let resultado = document.getElementById('resultado');
         resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-
-        // alert(sorteados);
-
-        // let numeroAleatorio = obterNumeroAleatorio(de,ate);
-        // alert(numeroAleatorio)
-
-        // alert(`Quantidade: ${quantidade}`);
-        // alert(`De: ${de}`);
-        // alert(`Até: ${ate}`);
     }
 }
 function obterNumeroAleatorio(min,max){
